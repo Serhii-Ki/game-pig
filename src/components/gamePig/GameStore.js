@@ -1,4 +1,4 @@
-import { makeObservable, observable, action, reaction, when, autorun } from "mobx";
+import { makeObservable, observable, action, autorun } from "mobx";
 
 class GameStore {
     dicePoints = 0;
@@ -31,23 +31,6 @@ class GameStore {
             }
 
         });
-
-
-        // when(
-        //     () => this.onePlayerPoints >= 20 || this.twoPlayerPoints >= 20,
-        //     () => {
-        //         this.isWinner = true;
-        //         this.isActiveMethod = false;
-        //     }
-        // );
-
-        // const gameFinish = reaction(() => this.isWinner,
-        //     (isWinner) => {
-        //         if (isWinner) {
-        //             this.isActiveMethod = false;
-        //             gameFinish();
-        //         }
-        //     });
     }
 
     changePlayer() {
